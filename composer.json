@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Ordermonitor_Agent",
+    "type": "magento-module",
+    "license": "Commercial",
+    "homepage": "",
+    "description": "Monitor what matters; orders. Get notifications if something goes awry. Trends and forecasting give you insight into how your store is performing.",
+    "authors": [
+    {
+        "name": "Adam Levenson",
+        "email": "adam@digitaloperative.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

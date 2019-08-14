@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Order Monitor
+ *
+ * @category    Ordermonitor
+ * @package     Ordermonitor_Agent
+ * @author      Digital Operative <codemaster@digitaloperative.com>
+ * @copyright   Copyright (C) 2014 Digital Operative
+ * @license     http://www.ordermonitor.com/license
+ */
+-->
+<config>
+    <modules>
+        <Ordermonitor_Agent>
+            <!-- @Om - If version changes, update the default value for <om_version> at end of file -->
+            <version>1.1.9</version>
+        </Ordermonitor_Agent>
+    </modules>
+    <frontend>
+        <routers>
+            <ordermonitor_agent>
+                <use>standard</use>
+                <args>
+                    <module>Ordermonitor_Agent</module>
+                    <frontName>ordermonitor</frontName>
+                </args>
+            </ordermonitor_agent>
+        </routers>
+    </frontend>
+    <global>
+        <blocks>
+            <ordermonitor_agent>
+                <class>Ordermonitor_Agent_Block</class>
+            </ordermonitor_agent>
+        </blocks>
+        <models>
+            <ordermonitor_agent>
+                <class>Ordermonitor_Agent_Model</class>
+            </ordermonitor_agent>
+        </models>
+        <helpers>
+            <ordermonitor_agent>
+                <class>Ordermonitor_Agent_Helper</class>
+            </ordermonitor_agent>
+        </helpers>
+    </global>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <ordermonitor translate="title" module="ordermonitor_agent">
+                                            <title>Order Monitor</title>
+                                        </ordermonitor>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <default>
+        <ordermonitor>
+            <general_configuration>
+                <om_version>1.1.9</om_version>
+                <om_username/>
+                <om_api_key/>
+            </general_configuration>
+        </ordermonitor>
+    </default>
+</config>
