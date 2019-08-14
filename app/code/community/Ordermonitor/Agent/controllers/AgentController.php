@@ -68,7 +68,6 @@ class Ordermonitor_Agent_AgentController extends Mage_Core_Controller_Front_Acti
                     );
                 
                 $results = $om->getOrderInfo($start, $end, $storeIds, $params);
-                $om->getCartInfo($start, $end, $storeIds);
 
                 if ($getItemTotals === true) {
                     $itemTotals = $om->getItemTotals($start, $end, $storeIds, $skus, $limit);

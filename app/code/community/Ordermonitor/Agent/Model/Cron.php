@@ -65,7 +65,7 @@ class Ordermonitor_Agent_Model_Cron extends Mage_Core_Model_Abstract
             ->columns(array('status', 'scheduled_at', 'executed_at', 'finished_at'))
             ->limit(1);
 
-        $jobInfo = $items->getFirstItem()->toArray();
+        $jobInfo = $items->getFirstItem()->setPageSize(1)->toArray();
 
         if (count($jobInfo) > 0) {
             $results['status']    = $jobInfo['status'];
@@ -125,7 +125,7 @@ class Ordermonitor_Agent_Model_Cron extends Mage_Core_Model_Abstract
             ->columns(array('status', 'scheduled_at', 'executed_at', 'finished_at'))
             ->limit(1);
 
-        $jobInfo = $items->getFirstItem()->toArray();
+        $jobInfo = $items->getFirstItem()->setPageSize(1)->toArray();
 
         return (!isset($jobInfo['finished_at']) || is_null($jobInfo['finished_at'] ) ? $maxTime : $time - strtotime($jobInfo['finished_at']));
     }

@@ -14,7 +14,7 @@
     <modules>
         <Ordermonitor_Agent>
             <!-- @Om - If version changes, update the default value for <om_version> at end of file -->
-            <version>1.2.3</version>
+            <version>1.2.4</version>
         </Ordermonitor_Agent>
     </modules>
     <frontend>
@@ -69,7 +69,7 @@
     <default>
         <ordermonitor>
             <general_configuration>
-                <om_version>1.2.3</om_version>
+                <om_version>1.2.4</om_version>
                 <om_username/>
                 <om_api_key/>
             </general_configuration>

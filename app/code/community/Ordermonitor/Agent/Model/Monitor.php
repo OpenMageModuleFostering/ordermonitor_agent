@@ -278,7 +278,7 @@ class Ordermonitor_Agent_Model_Monitor extends Mage_Core_Model_Abstract
                 'MIN(base_price) as min_base_price'
             ));
 
-        return $items->getFirstItem()->toArray();
+        return $items->getFirstItem()->setPageSize(1)->toArray();
     }
 
     /**
@@ -441,7 +441,7 @@ class Ordermonitor_Agent_Model_Monitor extends Mage_Core_Model_Abstract
             ->columns(array('sum(is_active) as cartsCreatedActive'))
             ->columns(array('count(entity_id) as cartsCreated'));
 
-        $newCartsCount = $newCarts->getFirstItem()->toArray();
+        $newCartsCount = $newCarts->getFirstItem()->setPageSize(1)->toArray();
 
         //Carts updated
         $updatedCarts = Mage::getModel('sales/quote')
@@ -459,7 +459,7 @@ class Ordermonitor_Agent_Model_Monitor extends Mage_Core_Model_Abstract
             ->columns(array('sum(is_active) as cartsUpdatedActive'))
             ->columns(array('count(entity_id) as cartsUpdated'));
 
-        $updatedCartsCount = $updatedCarts->getFirstItem()->toArray();
+        $updatedCartsCount = $updatedCarts->getFirstItem()->setPageSize(1)->toArray();
 
         $results['data'] = array(
             'newCarts'           => (int)$newCartsCount['cartsCreated'],
@@ -497,7 +497,7 @@ class Ordermonitor_Agent_Model_Monitor extends Mage_Core_Model_Abstract
             ->reset(Zend_Db_Select::COLUMNS)
             ->columns(array('count(entity_id) as totalOrders'));
 
-        $results = $orders->getFirstItem()->toArray();
+        $results = $orders->getFirstItem()->setPageSize(1)->toArray();
 
         return (int)$results['totalOrders'];
     }
