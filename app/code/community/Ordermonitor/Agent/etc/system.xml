@@ -6,7 +6,7 @@
  * @category    Ordermonitor
  * @package     Ordermonitor_Agent
  * @author      Digital Operative <codemaster@digitaloperative.com>
- * @copyright   Copyright (C) 2014 Digital Operative
+ * @copyright   Copyright (C) 2015 Digital Operative
  * @license     http://www.ordermonitor.com/license
  */
 -->
@@ -36,29 +36,29 @@
                     <show_in_store>1</show_in_store>
                     <fields>
                         <om_username translate="label">
-                            <label>Username</label>
+                            <label>Account Name</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>1</sort_order>
                             <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
+                            <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
                             <comment>
                                 <![CDATA[
-                                Unique Key for displaying order totals and other sensative data.
+                                Order Monitor Account Name - created during sign up, see account page.
                                 ]]>
                             </comment>
                         </om_username>
 
                         <om_key translate="label">
-                            <label>API Key</label>
+                            <label>Agent Key</label>
                             <frontend_type>password</frontend_type>
                             <sort_order>2</sort_order>
                             <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
+                            <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
                             <comment>
                                 <![CDATA[
-                                Order Monitor API Key - get this from your Order Monitor Account.
+                                Order Monitor Agent Key - get this from your account page.
                                 ]]>
                             </comment>
                         </om_key>
@@ -73,7 +73,7 @@
                             <show_in_store>0</show_in_store>
                             <comment>
                                 <![CDATA[
-                                Output additional information for debugging
+                                Output additional information for debugging.
                                 ]]>
                             </comment>
                         </om_debug>

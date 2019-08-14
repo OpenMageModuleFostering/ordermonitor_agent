@@ -5,7 +5,7 @@
  * @category    Ordermonitor
  * @package     Ordermonitor_Agent
  * @author      Digital Operative <codemaster@digitaloperative.com>
- * @copyright   Copyright (C) 2014 Digital Operative
+ * @copyright   Copyright (C) 2015 Digital Operative
  * @license     http://www.ordermonitor.com/license
  */
 class Ordermonitor_Agent_AgentController extends Mage_Core_Controller_Front_Action
@@ -47,6 +47,7 @@ class Ordermonitor_Agent_AgentController extends Mage_Core_Controller_Front_Acti
         $getMinMaxPrices   = (bool)$request->getParam('maxMinPrices', 0);
         $checkStock        = (bool)$request->getParam('checkStock', 0);
         $getCustomerTotals = (bool)$request->getParam('customerTotals', 0);
+        $getCronStatus     = (bool)$request->getParam('cronJobs', 1);
         $stockAlertSkus    = json_decode($request->getParam('stockSkus', '[]'));
         $stockMinQty       = (int)$request->getParam('stockMinQty', 0);
         $limit             = (int)$request->getParam('limit', 100);
@@ -104,6 +105,11 @@ class Ordermonitor_Agent_AgentController extends Mage_Core_Controller_Front_Acti
                     $results['info']['runTime']                   += $customerTotals['runTime'];
                     $results['info']['runTimes']['customerTotals'] = $customerTotals['runTime'];
                 }
+
+                if ($getCronStatus === true) {
+                    $cron   = Mage::getModel('ordermonitor_agent/cron');
+                    $results['cron'] = $cron->getCronStatus();
+                }
                 
             } else {
                 $results['error']['code']    = '1';
@@ -138,6 +144,18 @@ class Ordermonitor_Agent_AgentController extends Mage_Core_Controller_Front_Acti
 
         $this->getResponse()->setHeader('Content-type', 'application/json');
         $this->getResponse()->setBody($json);
+    }
+
+    public function securityAction()
+    {
+        $om = Mage::getModel('ordermonitor_agent/secure');
+        $results = $om->getSecureInfo();
+
+        $json = json_encode($results);
+
+        $this->getResponse()->setHeader('Content-type', 'application/json');
+        $this->getResponse()->setBody($json);
+
     }
     
 }

@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <package>
     <name>Ordermonitor_Agent</name>
-    <version>1.1.9</version>
+    <version>1.2.0</version>
     <stability>stable</stability>
     <license uri="http://www.ordermonitor.com/license">Commercial</license>
     <channel>community</channel>
     <extends/>
     <summary>Monitor what matters; orders. Get notifications if something goes awry. Trends and forecasting give you insight into how your store is performing.</summary>
     <description>The Order Monitor Agent collects and aggregates data for the Order Monitor service, enabling you to setup alerts based on order volume, aov, discounts and much more. Compare your metrics to yesterday and your average to see if your trending up or down. Forecasting allows to predict the sales for the day.</description>
-    <notes>Initial release, including setup methods, data aggregators, cart checks and data by sku.</notes>
+    <notes>Updated to get status of cron jobs. Other minor updates and tweaks.</notes>
     <authors><author><name>Adam Levenson</name><user>adamdo</user><email>adam@digitaloperative.com</email></author></authors>
-    <date>2014-07-08</date>
-    <time>21:53:25</time>
-    <contents><target name="mageetc"><dir name="modules"><file name="Ordermonitor_Agent.xml" hash="d801d81de66117f06637c0750e2a5931"/></dir></target><target name="magecommunity"><dir name="Ordermonitor"><dir name="Agent"><file name="Exception.php" hash="6871219a0675e29c9e39846b3cc56d3c"/><dir name="Helper"><file name="Data.php" hash="9672c179f037cfe56b9684de25b0c986"/></dir><dir name="Model"><file name="Inventory.php" hash="1498ea49a905942d8920342e63e450ff"/><file name="Monitor.php" hash="18585c0cec820f71a86b59d8b37668dc"/></dir><dir name="controllers"><file name="AgentController.php" hash="e7b82d7c4dc37bcf8d6e25944152c5e2"/></dir><dir name="etc"><file name="config.xml" hash="a8983c624280f54d2b2098ae5397599c"/><file name="system.xml" hash="e802342be7e839f09a354eacce1de01d"/></dir><file name=".DS_Store" hash="816504a148fbbe790644c6c7427a6f81"/></dir><file name=".DS_Store" hash="60238f239932c73cc1be075fbd3e96ef"/></dir></target></contents>
+    <date>2016-02-09</date>
+    <time>21:05:21</time>
+    <contents><target name="mageetc"><dir name="modules"><file name="Ordermonitor_Agent.xml" hash="d801d81de66117f06637c0750e2a5931"/></dir></target><target name="magecommunity"><dir name="Ordermonitor"><dir name="Agent"><file name="Exception.php" hash="43ac0dea595b3d2134a76b55e70b1d5f"/><dir name="Helper"><file name="Data.php" hash="9275cefdbaeca0062868e257c391f7e7"/></dir><dir name="Model"><file name="Cron.php" hash="f5ed277ab930a44951ac3b78487d2317"/><file name="Inventory.php" hash="937d22c671add6ae30726e0bf38c9d54"/><file name="Monitor.php" hash="6acf1b9e5336aaeeab4cadcf6e322e16"/><file name="Secure.php" hash="eb3f5601eecf3585f58d8fff4414d680"/></dir><dir name="controllers"><file name="AgentController.php" hash="1ffcdba434dcac43e1309576a6fbbae4"/></dir><dir name="etc"><file name="config.xml" hash="31cb814911264eaa2513c85f18ef9b36"/><file name="system.xml" hash="544cf6e710b8d0cc50cd04bbf1faa202"/></dir><file name=".DS_Store" hash="816504a148fbbe790644c6c7427a6f81"/></dir><file name=".DS_Store" hash="60238f239932c73cc1be075fbd3e96ef"/></dir></target></contents>
     <compatible/>
-    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php><package><name>Mage_Core_Modules</name><channel>community</channel><min>1.5.0.0</min><max>1.9.0.1</max></package></required></dependencies>
+    <dependencies><required><php><min>5.3.0</min><max>6.0.0</max></php><package><name>Mage_Core_Modules</name><channel>community</channel><min>1.5.0.0</min><max>1.9.2.3</max></package></required></dependencies>
 </package>
