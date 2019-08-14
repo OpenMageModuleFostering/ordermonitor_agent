@@ -5,7 +5,7 @@
  * @category    Ordermonitor
  * @package     Ordermonitor_Agent
  * @author      Digital Operative <codemaster@digitaloperative.com>
- * @copyright   Copyright (C) 2015 Digital Operative
+ * @copyright   Copyright (C) 2016 Digital Operative
  * @license     http://www.ordermonitor.com/license
  */
 class Ordermonitor_Agent_Model_Inventory extends Mage_Core_Model_Abstract

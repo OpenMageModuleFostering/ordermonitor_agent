@@ -5,7 +5,7 @@
  * @category    Ordermonitor
  * @package     Ordermonitor_Agent
  * @author      Digital Operative <codemaster@digitaloperative.com>
- * @copyright   Copyright (C) 2015 Digital Operative
+ * @copyright   Copyright (C) 2016 Digital Operative
  * @license     http://www.ordermonitor.com/license
  */
 class Ordermonitor_Agent_AgentController extends Mage_Core_Controller_Front_Action
@@ -56,7 +56,7 @@ class Ordermonitor_Agent_AgentController extends Mage_Core_Controller_Front_Acti
         $om = Mage::getModel('ordermonitor_agent/monitor');
         
         if ($om->storeIdsOk($storeIds) === false) {
-            $results['error']['code']    = '1';
+            $results['error']['code']    = '2';
             $results['error']['message'] = 'Invalid store id(s).';
         } else {
             if ($this->_auth === true) {
@@ -145,17 +145,4 @@ class Ordermonitor_Agent_AgentController extends Mage_Core_Controller_Front_Acti
         $this->getResponse()->setHeader('Content-type', 'application/json');
         $this->getResponse()->setBody($json);
     }
-
-    public function securityAction()
-    {
-        $om = Mage::getModel('ordermonitor_agent/secure');
-        $results = $om->getSecureInfo();
-
-        $json = json_encode($results);
-
-        $this->getResponse()->setHeader('Content-type', 'application/json');
-        $this->getResponse()->setBody($json);
-
-    }
-    
 }
