@@ -10,7 +10,7 @@
  */
 class Ordermonitor_Agent_AgentController extends Mage_Core_Controller_Front_Action
 {
-    const OM_AUTH_FAIL = 'Invalid authentication. Please check your account name and api key.';
+    const OM_AUTH_FAIL = 'Invalid authentication';
 
     protected $_auth = false;
 
@@ -36,8 +36,8 @@ class Ordermonitor_Agent_AgentController extends Mage_Core_Controller_Front_Acti
         $request = $this->getRequest();
 
         // require start and end dates
-        $start = strtotime($request->getParam('start', '2013-01-01 00:00:00'));
-        $end   = strtotime($request->getParam('end', '2013-01-01 00:00:01'));
+        $start = strtotime($request->getParam('start', '2016-01-01 00:00:00'));
+        $end   = strtotime($request->getParam('end', '2016-01-01 00:00:01'));
 
         $storeIds          = json_decode($request->getParam('stores', '["0"]'));
         $skus              = json_decode($request->getParam('skus', '[]'));
